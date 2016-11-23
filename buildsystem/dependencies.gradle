@@ -1,0 +1,110 @@
+ext {
+    // Versions
+    androidSupportSdkVersion = '24.1.1'
+    runnerVersion = '0.5'
+    multiDexVersion = '1.0.1'
+    constraintLayoutVersion = '1.0.0-alpha2'
+    daggerVersion = '2.5'
+    butterKnifeVersion = '8.1.0'
+    okHttpVersion = '3.4.1'
+    retrofitVersion = '2.1.0'
+    rxBindingVersion = '0.4.0'
+    rxLifeCycleVersion = '0.6.1'
+    safelyAndroidVersion = '1.1.1'
+    autoBundleVersion = '1.0.2'
+    onActivityResultVersion = '0.6.0'
+    jacocoVersion = '0.7.4.201502262128'
+    dexmakerVersion = '1.2'
+    jsonAssertVersion = '1.3.0'
+    espressoVersion = '2.2.2'
+    icepickVersion = '3.2.0'
+
+    libs = [
+            appCompat            : "com.android.support:appcompat-v7:$androidSupportSdkVersion",
+            recyclerView         : "com.android.support:recyclerview-v7:$androidSupportSdkVersion",
+            cardView             : "com.android.support:cardview-v7:$androidSupportSdkVersion",
+            gridLayout           : "com.android.support:gridlayout-v7:$androidSupportSdkVersion",
+            mediaRouter          : "com.android.support:mediarouter-v7:$androidSupportSdkVersion",
+            palette              : "com.android.support:palette-v7:$androidSupportSdkVersion",
+            preference           : "com.android.support:preference-v7:$androidSupportSdkVersion",
+            annotations          : "com.android.support:support-annotations:$androidSupportSdkVersion",
+            design               : "com.android.support:design:$androidSupportSdkVersion",
+            supportv4            : "com.android.support:support-v4:$androidSupportSdkVersion",
+            multiDex             : "com.android.support:multidex:$multiDexVersion",
+            constraintLayout     : "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
+            safelyAndroid        : "com.github.piasy:safelyandroid:$safelyAndroidVersion",
+            safelyAndroidLint    : "com.github.piasy:safelyandroid-lint:$safelyAndroidVersion",
+            mosby                : "com.hannesdorfmann.mosby:mvp:2.0.1",
+            rxJava               : "io.reactivex:rxjava:1.1.10",
+            rxAndroid            : "io.reactivex:rxandroid:1.2.1",
+            rxBinding            : "com.jakewharton.rxbinding:rxbinding:$rxBindingVersion",
+            rxBindingAppCompat   : "com.jakewharton.rxbinding:rxbinding-appcompat-v7:$rxBindingVersion",
+            rxLifeCycle          : "com.trello:rxlifecycle:$rxLifeCycleVersion",
+            rxLifeCycleComponent : "com.trello:rxlifecycle-components:$rxLifeCycleVersion",
+            rxJavaProGuardRules  : "com.artemzin.rxjava:proguard-rules:1.2.0.0",
+            dagger               : "com.google.dagger:dagger:$daggerVersion",
+            butterKnife          : "com.jakewharton:butterknife:$butterKnifeVersion",
+            gson                 : "com.google.code.gson:gson:2.7",
+            okHttp               : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+            okHttpLogging        : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            retrofit             : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitRxJavaAdapter: "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion",
+            threetenabp          : "com.jakewharton.threetenabp:threetenabp:1.0.3",
+            onActivityResult     : "com.vanniktech:onactivityresult:$onActivityResultVersion",
+            icepick              : "frankiesardo:icepick:$icepickVersion",
+            dexter               : "com.karumi:dexter:2.2.2",
+            timber               : "com.jakewharton.timber:timber:4.1.2",
+            once                 : "com.jonathanfinerty.once:once:1.0.3",
+            glide                : "com.github.bumptech.glide:glide:3.7.0",
+            strictmodeNotifier   : "com.nshmura:strictmode-notifier:0.9.0",
+            blockCanary          : "com.github.moduth:blockcanary-android:1.2.1",
+            leakCanary           : "com.squareup.leakcanary:leakcanary-android:1.3.1",
+            hockeyApp            : "net.hockeyapp.android:HockeySDK:4.0.1",
+            autoBundle           : "com.github.yatatsu:autobundle:$autoBundleVersion",
+            threeTebAbpAdapter   : 'org.aaronhe:threetenbp-gson-adapter:1.0.2',
+            jodaTime             : 'net.danlew:android.joda:2.9.4.1',
+            mpAndroidChart       : 'com.github.PhilJay:MPAndroidChart:v3.0.0-beta1',
+            materialNumberPicker : 'biz.kasual:materialnumberpicker:1.2.1',
+            fabExtended          : 'com.github.clans:fab:1.6.4',
+            greenDao             : 'org.greenrobot:greendao:3.1.1',
+            androidImageCropper  : 'com.theartofdev.edmodo:android-image-cropper:2.3.1',
+            estimoteSDK          : 'com.estimote:sdk:0.13.0@aar',
+            reactiveBeacon       : 'com.github.pwittchen:reactivebeacons:0.5.1'
+    ]
+
+    proc = [
+            retrolambda        : "net.orfjackal.retrolambda:retrolambda:2.3.0",
+            errorprone         : "com.google.errorprone:error_prone_core:2.0.9",
+            autoValue          : "com.google.auto.value:auto-value:1.2",
+            autoParcel         : "com.ryanharter.auto.value:auto-value-parcel:0.2.1",
+            autoGson           : "com.ryanharter.auto.value:auto-value-gson:0.3.1",
+            autoBundleApt      : "com.github.yatatsu:autobundle-processor:$autoBundleVersion",
+            icepickProcessor   : "frankiesardo:icepick-processor:$icepickVersion", // apt (provided)
+            onActivityResultApt: "com.vanniktech:onactivityresult-compiler:$onActivityResultVersion", // apt
+            butterKnifeApt     : "com.jakewharton:butterknife-compiler:$butterKnifeVersion", // apt
+            daggerApt          : "com.google.dagger:dagger-compiler:$daggerVersion", // apt
+            javaxAnnotation    : "org.glassfish:javax.annotation:10.0-b28", // apt (provided)
+            autoValueGson      : 'com.ryanharter.auto.value:auto-value-gson:0.3.2-rc1', //apt
+            autoValueParcel    : 'com.ryanharter.auto.value:auto-value-parcel:0.2.4-rc2' //apt
+    ]
+
+    test = [
+            mockito                : "org.mockito:mockito-core:1.10.19",
+            dexmaker               : "com.google.dexmaker:dexmaker:$dexmakerVersion",
+            dexmakerMockito        : "com.google.dexmaker:dexmaker-mockito:$dexmakerVersion",
+            espresso               : "com.android.support.test.espresso:espresso-core:$espressoVersion",
+            espressoIntents        : "com.android.support.test.espresso:espresso-intents:$espressoVersion",
+            espressoContrib        : "com.android.support.test.espresso:espresso-contrib:$espressoVersion",
+            espessoWeb             : "com.android.support.test.espresso:espresso-web:$espressoVersion",
+            espressoIdlingResource : "com.android.support.test.espresso:espresso-idling-resource:$espressoVersion",
+            junit                  : "junit:junit:4.12",
+            androidJUnitRunner     : "com.android.support.test:runner:$runnerVersion",
+            androidJUnit4Rules     : "com.android.support.test:rules:$runnerVersion",
+            multidexInstrumentation: "com.android.support:multidex-instrumentation:$multiDexVersion",
+            hamcrest               : "org.hamcrest:hamcrest-library:1.3",
+            jsonAssert             : "org.skyscreamer:jsonassert:$jsonAssertVersion",
+            restMockAndroid        : "com.github.andrzejchm.RESTMock:android:0.1.3",
+            jodaTimeTest           : "joda-time:joda-time:2.9.4"
+    ]
+}

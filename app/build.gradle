@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.autoscout24.gradle.todo'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 24
@@ -20,10 +23,130 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    testCompile 'junit:junit:4.12'
+    //support
+    compile libs.appCompat
+    compile libs.design
+    compile libs.supportv4
+    compile libs.cardView
+
+    //Retrolambda
+    apt proc.retrolambda
+
+    //hockeyapp
+    compile libs.hockeyApp
+
+    //mosby
+    compile libs.mosby
+
+    //dagger
+    compile libs.dagger
+    provided proc.daggerApt
+
+    //icepick
+    compile libs.icepick
+    provided proc.icepickProcessor
+
+    //junit
+    testCompile test.junit
+
+    //butterknife
+    compile libs.butterKnife
+    apt proc.butterKnifeApt
+
+    //onActivityResult
+    compile libs.onActivityResult
+    apt proc.onActivityResultApt
+
+    //glide
+    compile libs.glide
+
+    //dexter
+    compile libs.dexter
+
+    //autoValue
+    apt proc.autoValue
+    provided proc.autoValue
+
+    //retrofit
+    compile libs.retrofit
+    compile libs.retrofitGsonConverter
+    compile libs.retrofitRxJavaAdapter
+
+    //okhttp
+    compile libs.okHttp
+    compile libs.okHttpLogging
+
+    //rxjava
+    compile libs.rxJavaProGuardRules
+    compile libs.rxJava
+    compile(libs.rxAndroid) {
+        exclude module: 'rxjava'
+    }
+
+    //timber
+    compile libs.timber
+
+    //autovaluegson
+    apt proc.autoValueGson
+    compile libs.jodaTime
+
+    //mpAndroidChart
+    compile libs.mpAndroidChart
+
+    //unit testing
+    testCompile(test.junit) {
+        exclude module: 'hamcrest-core'
+    }
+    testCompile test.mockito
+    testCompile test.jodaTimeTest
+    androidTestCompile(test.restMockAndroid) {
+        exclude module: 'okhttp'
+    }
+    androidTestCompile test.hamcrest
+    androidTestCompile libs.annotations
+    androidTestCompile(test.androidJUnitRunner) {
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile(test.androidJUnit4Rules) {
+        exclude module: 'support-annotations'
+        exclude module: 'hamcrest-core'
+    }
+    androidTestCompile(test.espresso) {
+        exclude module: 'hamcrest-library'
+        exclude module: 'rules'
+        exclude module: 'runner'
+        exclude module: 'javax.annotation-api'
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile(test.espressoContrib) {
+        exclude module: 'espresso-core'
+        exclude module: 'hamcrest-core'
+        exclude module: 'support-v4'
+        exclude module: 'appcompat-v7'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'support-annotations'
+        exclude module: 'design'
+    }
+    androidTestCompile(test.espressoIntents) {
+        exclude module: 'espresso-core'
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile(test.espressoIdlingResource) {
+        exclude module: 'espresso-core'
+    }
+
+    //material Number Picker
+    compile libs.materialNumberPicker
+
+    //extended fab
+    compile libs.fabExtended
+
+    //auto-value-parcel
+    apt proc.autoValueParcel
+
+    //GreenDao db
+    compile libs.greenDao
+
+    //Android Image Cropper
+    compile libs.androidImageCropper
 }
